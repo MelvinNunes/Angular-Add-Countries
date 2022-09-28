@@ -1,3 +1,3 @@
-export const IP_SERVER = 'localhost:8080';
+export const IP_SERVER = 'paises2ibi.herokuapp.com';
 
-export const API_SERVER = 'http://' + IP_SERVER + '/api/paises';
+export const API_SERVER = 'https://' + IP_SERVER + '/api/paises';

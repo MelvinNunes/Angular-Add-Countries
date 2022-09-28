@@ -56,6 +56,7 @@ export class CreateComponent implements OnInit {
     this.request.post('/add', Pais).subscribe(
       (res: any) => {
         this.successNotification();
+        this.form.reset();
       },
       (err: any) => {
         this.errorNotification();
