@@ -1,0 +1,187 @@
+<div class="w-full h-full px-14 flex justify-center bg-slate-100">
+  <div class="w-full shadow-lg p-8 my-4 rounded bg-white">
+    <form [formGroup]="form">
+      <div class="mb-6">
+        <label
+          for="nome"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700"
+          >Nome do país<span class="text-red-500">*</span>
+        </label>
+        <input
+          formControlName="nome"
+          type="text"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="Ex: Moçambique"
+        />
+        <div
+          *ngIf="!form.controls['nome'].valid && form.controls['nome'].touched"
+          style="padding-top: 10px"
+        >
+          <div
+            *ngIf="!form.controls['nome'].errors?.['required']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">O campo do nome do país é obrigatório.</p>
+          </div>
+          <div
+            *ngIf="!form.controls['nome'].errors?.['minLength']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">
+              Por favor introduza um nome com 2 ou mais caractéres.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label
+          for="capital"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700"
+          >Capital do país<span class="text-red-500">*</span></label
+        >
+        <input
+          type="text"
+          id="capital"
+          formControlName="capital"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="Ex: Maputo"
+          required=""
+        />
+        <div
+          *ngIf="
+            !form.controls['capital'].valid && form.controls['capital'].touched
+          "
+          style="padding-top: 10px"
+        >
+          <div
+            *ngIf="!form.controls['capital'].errors?.['required']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">O campo da capital é obrigatório.</p>
+          </div>
+          <div
+            *ngIf="!form.controls['capital'].errors?.['minLength']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">Por favor introduza 2 ou mais caractéres.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label
+          for="regiao"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700"
+          >Região<span class="text-red-500">*</span></label
+        >
+        <input
+          type="text"
+          id="regiao"
+          formControlName="regiao"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="Ex: Sul"
+          required=""
+        />
+        <div
+          *ngIf="
+            !form.controls['regiao'].valid && form.controls['regiao'].touched
+          "
+          style="padding-top: 10px"
+        >
+          <div
+            *ngIf="!form.controls['regiao'].errors?.['required']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">O campo da regiao é obrigatório.</p>
+          </div>
+          <div
+            *ngIf="!form.controls['regiao'].errors?.['minLength']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">Por favor introduza 2 ou mais caractéres.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label
+          for="subRegiao"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700"
+          >Sub-Região<span class="text-red-500">*</span></label
+        >
+        <input
+          type="text"
+          id="subRegiao"
+          formControlName="subRegiao"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="Ex: Meio-Sul"
+          required=""
+        />
+        <div
+          *ngIf="
+            !form.controls['subRegiao'].valid &&
+            form.controls['subRegiao'].touched
+          "
+          style="padding-top: 10px"
+        >
+          <div
+            *ngIf="!form.controls['subRegiao'].errors?.['required']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">O campo da subRegiao é obrigatório.</p>
+          </div>
+          <div
+            *ngIf="!form.controls['subRegiao'].errors?.['minLength']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">
+              Por favor introduza um nome com 2 ou mais caractéres.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label
+          for="area"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700"
+          >Área<span class="text-red-500">*</span></label
+        >
+        <input
+          type="text"
+          id="area"
+          formControlName="area"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder=""
+          required=""
+        />
+        <div
+          *ngIf="!form.controls['area'].valid && form.controls['area'].touched"
+          style="padding-top: 10px"
+        >
+          <div
+            *ngIf="!form.controls['area'].errors?.['required']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">O campo da area do país é obrigatório.</p>
+          </div>
+          <div
+            *ngIf="!form.controls['area'].errors?.['minLength']"
+            style="font-size: 11.5px"
+          >
+            <p style="color: red">
+              Por favor introduza um nome com 2 ou mais caractéres.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Obrigatório<span class="text-red-500">*</span></p>
+      </div>
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        (click)="createPais()"
+      >
+        Adicionar novo país
+      </button>
+    </form>
+  </div>
+</div>
