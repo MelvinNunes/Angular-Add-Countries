@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view.component.css'],
 })
 export class ViewComponent implements OnInit {
-  orders: any = ['nome', 'capital', 'regiao', 'subRegiao', 'area'];
+  orders: any = ['ordenar', 'nome', 'capital', 'regiao', 'subRegiao', 'area'];
 
   paises: any = [];
 
