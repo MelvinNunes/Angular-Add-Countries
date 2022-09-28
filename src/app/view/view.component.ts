@@ -9,6 +9,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view.component.css'],
 })
 export class ViewComponent implements OnInit {
+  orders: any = ['nome', 'capital', 'regiao', 'subRegiao', 'area'];
+
   paises: any = [];
 
   pais_in: any;
@@ -28,6 +30,10 @@ export class ViewComponent implements OnInit {
     area: new FormControl('', [Validators.minLength(2), Validators.required]),
   });
 
+  orderForm: any = new FormGroup({
+    orderString: new FormControl('Ordenar Por'),
+  });
+
   constructor(private request: RequestsService) {}
 
   ngOnInit(): void {
@@ -40,12 +46,20 @@ export class ViewComponent implements OnInit {
     });
   }
 
+  //Get Ordered By
+  getOrderby(): void {
+    let orderString = this.orderForm.value.orderString;
+    this.request.get(`/orderBy=${orderString}`).subscribe((res: any) => {
+      this.paises = res;
+    });
+  }
+
   // Notifications
-  successNotification() {
+  successNotification(): void {
     Swal.fire('Sucesso', 'País atualizado com sucesso!', 'success');
   }
 
-  successEditNotification() {
+  successEditNotification(): void {
     Swal.fire('Sucesso', 'País apagado com sucesso!', 'success');
   }
 

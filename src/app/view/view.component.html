@@ -1,4 +1,26 @@
 <div class="py-10 px-20">
+  <div class="w-full flex justify-start">
+    <div>
+      <label
+        for="nome"
+        class="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-700"
+        >Ordenar Por:
+      </label>
+      <form [formGroup]="orderForm">
+        <select
+          class="px-2 py-3 border-b-0 rounded outline-1 outline-slate-400 bg-slate-300 my-3"
+          name="order"
+          id="order"
+          formControlName="orderString"
+          (change)="getOrderby()"
+        >
+          <option *ngFor="let order of orders" value="{{ order }}">
+            {{ order }}
+          </option>
+        </select>
+      </form>
+    </div>
+  </div>
   <div class="overflow-x-auto relative">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead
